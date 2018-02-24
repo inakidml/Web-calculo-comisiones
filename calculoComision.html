@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="USD" data-secondary="" data-ticker="true" data-rank="false" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+   <div>
+    <input type="number" id="Entrada" placeholder="Entrada">
+    <input type="number" id="Salida" placeholder="Salida"><br/>
+    <input type="number" id="Comision" placeholder="Comisión">
+    <button onclick="calcular();">Calcular</button>
+    <p>Resultado: <input type="number" id="inputResultado"></p>
+    
+    <p>Comisión: <input type="number" id="inputComision"></p>
+    </div>
+       <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js">         
+    </script>
+     <script type="text/javascript" src="js/calculo.js">
+</body>
+
+</html>
