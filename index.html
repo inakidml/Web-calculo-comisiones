@@ -47,34 +47,40 @@
                 <h1>Calculadora</h1>
                 <hr>
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="javascript:void(0);">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="entryprice">Precio entrada:</label>
+                        <label class="control-label col-sm-2" for="entryprice">P. entrada:</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="entryprice" placeholder="0">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="exitprice">Precio salida:</label>
+                        <label class="control-label col-sm-2" for="exitprice">P. salida:</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="exitprice" placeholder="0">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="comision">Comisión:</label>
+                        <label class="control-label col-sm-2" for="comision">% Comisión:</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" id="comision" placeholder="%">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button class="btn btn-default" onclick="">Calcular</button>
+                            <button class="btn btn-default" onclick="calcular();">Calcular</button>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="total">Total:</label>
+                        <label class="control-label col-sm-2" for="totalcomision">Comisión:</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="total" placeholder="0" disabled>
+                            <input type="number" class="form-control" id="totalcomision" placeholder="0" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="beneficio">Beneficio:</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="beneficio" placeholder="0" disabled>
                         </div>
                     </div>
                 </form>
@@ -99,11 +105,11 @@
     <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
     <script type="text/javascript">
         function calcular() {
-            entrada = document.getElementById("Entrada").value;
-            salida = document.getElementById("Salida").value;
-            comision = document.getElementById("Comision").value;
-            document.getElementById("inputResultado").value = salida - entrada;
-            document.getElementById("inputComision").value = ((parseFloat(entrada) + parseFloat(salida)) * comision) / 100;
+            entrada = document.getElementById("entryprice").value;
+            salida = document.getElementById("exitprice").value;
+            comision = document.getElementById("comision").value;          
+            document.getElementById("totalcomision").value = ((parseFloat(entrada) + parseFloat(salida)) * comision) / 100;
+            document.getElementById("beneficio").value = salida - entrada;
         }
     </script>
 </body>
