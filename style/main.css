@@ -67,3 +67,7 @@ a[aria-expanded="true"]::before {
 th {
     text-align: center;
 }
+
+.fuentepeque {
+    font-size: 10px;
+}
